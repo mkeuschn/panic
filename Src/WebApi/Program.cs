@@ -22,12 +22,14 @@ app.UseRewriter(rewriteOptions);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.MapScalarApiReference(options =>
-    {
-        options.Title = $"Panic {builder.Environment.EnvironmentName}";
-    });
+    
 }
+
+app.MapOpenApi();
+app.MapScalarApiReference(options =>
+{
+    options.Title = $"Panic {builder.Environment.EnvironmentName}";
+});
 
 app.UseHttpsRedirection();
 app.UseSerilogRequestLogging();
