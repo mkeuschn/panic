@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Rewrite;
+using Scalar.AspNetCore;
 using Serilog;
 
 Serilog.Debugging.SelfLog.Enable(Console.Error);
@@ -7,14 +9,24 @@ builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    // TODO: Add Transformer
+});
 
 var app = builder.Build();
+var rewriteOptions = new RewriteOptions();
+rewriteOptions.AddRedirect("^$", "scalar/v1");
+app.UseRewriter(rewriteOptions);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference(options =>
+    {
+        options.Title = $"Panic {builder.Environment.EnvironmentName}";
+    });
 }
 
 app.UseHttpsRedirection();
