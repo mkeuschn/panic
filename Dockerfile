@@ -11,8 +11,7 @@ FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
 ARG DOTNET_STARTUP_PROJECT
 
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
 
 RUN echo -e "Variablen-Check:\n \
     DOTNET_STARTUP_PROJECT: ${DOTNET_STARTUP_PROJECT}\n"
