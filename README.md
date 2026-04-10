@@ -4,8 +4,13 @@
 
 ## Podman
 
+Build
 ```bash
-podman build --platform linux/amd64 --no-cache -t panic .
+podman build --no-cache -t panic .
+```
+Run
+```bash
+podman run --network host --rm localhost/panic -p 8080:8080
 ```
 
 ## Central Package Management
