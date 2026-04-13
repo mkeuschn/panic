@@ -20,6 +20,9 @@ builder.Services.AddPanicDb();
 builder.Services.AddMetricDb();
 
 var app = builder.Build();
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+logger.LogInformation("Starting application in {Environment} environment", app.Environment.EnvironmentName);
+
 var rewriteOptions = new RewriteOptions();
 rewriteOptions.AddRedirect("^$", "scalar/v1");
 app.UseRewriter(rewriteOptions);
