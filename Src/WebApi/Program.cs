@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Rewrite;
+using PanicDb;
 using Scalar.AspNetCore;
 using Serilog;
 
@@ -13,6 +14,8 @@ builder.Services.AddOpenApi(options =>
 {
     // TODO: Add Transformer
 });
+
+builder.Services.AddPanicDb();
 
 var app = builder.Build();
 var rewriteOptions = new RewriteOptions();
