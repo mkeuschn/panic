@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\MetricDb\MetricDb.csproj" />
     <ProjectReference Include="..\Infrastructure\PanicDb\PanicDb.csproj" />
   </ItemGroup>
 

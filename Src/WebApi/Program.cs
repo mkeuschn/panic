@@ -1,3 +1,4 @@
+using MetricDb;
 using Microsoft.AspNetCore.Rewrite;
 using PanicDb;
 using Scalar.AspNetCore;
@@ -16,6 +17,7 @@ builder.Services.AddOpenApi(options =>
 });
 
 builder.Services.AddPanicDb();
+builder.Services.AddMetricDb();
 
 var app = builder.Build();
 var rewriteOptions = new RewriteOptions();

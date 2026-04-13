@@ -3,6 +3,7 @@
     <Project Path="Src/WebApi/WebApi.csproj" />
   </Folder>
   <Folder Name="/Src/Infrastructure/">
+    <Project Path="Src/Infrastructure/MetricDb/MetricDb.csproj" />
     <Project Path="Src/Infrastructure/PanicDb/PanicDb.csproj" />
   </Folder>
 </Solution>
