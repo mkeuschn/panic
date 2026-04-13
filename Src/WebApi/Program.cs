@@ -1,3 +1,4 @@
+using Application;
 using MetricDb;
 using Microsoft.AspNetCore.Rewrite;
 using PanicDb;
@@ -16,6 +17,7 @@ builder.Services.AddOpenApi(options =>
     // TODO: Add Transformer
 });
 
+builder.Services.AddApplication();
 builder.Services.AddPanicDb();
 builder.Services.AddMetricDb();
 

@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Src/">
+    <Project Path="Src/Application/Application.csproj" />
     <Project Path="Src/WebApi/WebApi.csproj" />
   </Folder>
   <Folder Name="/Src/Infrastructure/">
